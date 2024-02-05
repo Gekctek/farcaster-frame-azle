@@ -1,27 +1,46 @@
 import { Server } from 'azle';
 import express from 'express';
 
+interface FarcasterMessage {
+    untrustedData: {
+        fid: number;
+        url: string;
+        messageHash: string;
+        timestamp: number;
+        network: number;
+        buttonIndex: number;
+        castId: {
+            fid: number;
+            hash: string;
+        };
+    };
+    trustedData: {
+        messageBytes: string;
+    };
+}
+
 export default Server(() => {
     const app = express();
 
     app.use(express.json());
 
-    app.get('/api', (req, res) => {
-        let buttonChosen = req.body.untrusedData.buttonIndex;
+    app.post('/api', (req, res) => {
+        const body = req.body as FarcasterMessage;
+        const buttonChosen = body.untrustedData.buttonIndex;
         let buttonTexts = [
             'Button 1',
             'Button 2',
             'Button 3',
             'Button 4'
         ];
-        buttonTexts[buttonChosen - 1] += ' was clicked';
+        buttonTexts[buttonChosen - 1] = '**' + buttonTexts[buttonChosen - 1] + '**';
         res.send(pageFromTemplate(
             'https://raw.githubusercontent.com/demergent-labs/azle/main/logo/logo.svg',
             buttonTexts[0],
             buttonTexts[1],
             buttonTexts[2],
             buttonTexts[3],
-            'https://sctyd-5qaaa-aaaag-aa5lq-cai.raw.ic0.app//api',
+            'https://pd7ra-qiaaa-aaaan-qltsq-cai.raw.icp0.io/api',
             mainPageBody
         ))
     });
@@ -32,7 +51,7 @@ export default Server(() => {
             'Button 2',
             'Button 3',
             'Button 4',
-            'https://sctyd-5qaaa-aaaag-aa5lq-cai.raw.ic0.app//api',
+            'https://pd7ra-qiaaa-aaaan-qltsq-cai.raw.icp0.io/api',
             mainPageBody
         ))
     });
