@@ -1,0 +1,15 @@
+{
+    "canisters": {
+        "basic_bitcoin": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle basic_bitcoin",
+            "wasm": ".azle/basic_bitcoin/basic_bitcoin.wasm.gz",
+            "declarations": {
+                "output": "test/dfx_generated/basic_bitcoin",
+                "node_compatibility": true
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "canisters": {
+        "complex_init": {
+            "type": "custom",
+            "main": "src/complex_init/index.ts",
+            "candid": "src/complex_init/index.did",
+            "build": "npx azle complex_init",
+            "wasm": ".azle/complex_init/complex_init.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "test/dfx_generated/complex_init",
+                "node_compatibility": true
+            }
+        },
+        "rec_init": {
+            "type": "custom",
+            "main": "src/rec_init/index.ts",
+            "candid": "src/rec_init/index.did",
+            "build": "npx azle rec_init",
+            "wasm": ".azle/rec_init/rec_init.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "test/dfx_generated/rec_init",
+                "node_compatibility": true
+            }
+        }
+    }
+}

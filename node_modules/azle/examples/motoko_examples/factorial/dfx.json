@@ -1,0 +1,16 @@
+{
+    "canisters": {
+        "factorial": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle factorial",
+            "wasm": ".azle/factorial/factorial.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "test/dfx_generated/factorial",
+                "node_compatibility": true
+            }
+        }
+    }
+}

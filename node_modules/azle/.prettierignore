@@ -1,0 +1,8 @@
+.dfx
+.DS_Store
+dist
+.husky
+node_modules
+target
+/the_azle_book/book
+/docs

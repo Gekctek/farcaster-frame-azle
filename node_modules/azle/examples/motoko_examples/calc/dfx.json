@@ -1,0 +1,16 @@
+{
+    "canisters": {
+        "calc": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle calc",
+            "wasm": ".azle/calc/calc.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "test/dfx_generated/calc",
+                "node_compatibility": true
+            }
+        }
+    }
+}

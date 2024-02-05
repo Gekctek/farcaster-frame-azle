@@ -1,0 +1,23 @@
+{
+    "canisters": {
+        "superheroes": {
+            "type": "custom",
+            "main": "src/superheroes/index.ts",
+            "candid": "src/superheroes/index.did",
+            "build": "npx azle superheroes",
+            "wasm": ".azle/superheroes/superheroes.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "src/declarations",
+                "node_compatibility": true
+            }
+        },
+        "www": {
+            "type": "assets",
+            "frontend": {
+                "entrypoint": "src/www/index.html"
+            },
+            "source": ["src/www/components", "dist/www/"]
+        }
+    }
+}

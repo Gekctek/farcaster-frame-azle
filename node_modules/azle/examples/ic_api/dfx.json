@@ -1,0 +1,16 @@
+{
+    "canisters": {
+        "ic_api": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle ic_api",
+            "wasm": ".azle/ic_api/ic_api.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "test/dfx_generated/ic_api",
+                "node_compatibility": true
+            }
+        }
+    }
+}

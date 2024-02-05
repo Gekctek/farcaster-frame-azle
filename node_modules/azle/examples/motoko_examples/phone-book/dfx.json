@@ -1,0 +1,23 @@
+{
+    "canisters": {
+        "phone_book": {
+            "type": "custom",
+            "main": "src/phone_book/index.ts",
+            "candid": "src/phone_book/index.did",
+            "build": "npx azle phone_book",
+            "wasm": ".azle/phone_book/phone_book.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "src/declarations/phone_book",
+                "node_compatibility": false
+            }
+        },
+        "www": {
+            "type": "assets",
+            "frontend": {
+                "entrypoint": "src/www/public/index.html"
+            },
+            "source": ["src/www/assets", "dist/www/"]
+        }
+    }
+}

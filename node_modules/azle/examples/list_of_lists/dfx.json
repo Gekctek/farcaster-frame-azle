@@ -1,0 +1,16 @@
+{
+    "canisters": {
+        "list_of_lists": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle list_of_lists",
+            "wasm": ".azle/list_of_lists/list_of_lists.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "dfx_generated/list_of_lists",
+                "node_compatibility": true
+            }
+        }
+    }
+}

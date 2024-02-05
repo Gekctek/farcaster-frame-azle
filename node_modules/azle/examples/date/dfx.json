@@ -1,0 +1,16 @@
+{
+    "canisters": {
+        "date": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle date",
+            "wasm": ".azle/date/date.wasm",
+            "gzip": true,
+            "declarations": {
+                "output": "test/dfx_generated/date",
+                "node_compatibility": true
+            }
+        }
+    }
+}
