@@ -1,9 +1,5 @@
 {
-    "scripts": {
-        "build": "cd src/frontend && VITE_CANISTER_ORIGIN=http://$(dfx canister id backend).localhost:4943 vite build",
-        "pretest": "ts-node --transpile-only --ignore=false --skip-project test/pretest.ts",
-        "test": "ts-node --transpile-only --ignore=false --skip-project test/test.ts"
-    },
+    "scripts": {},
     "dependencies": {
         "azle": "^0.20.1",
         "express": "^4.18.2",
